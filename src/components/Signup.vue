@@ -23,6 +23,7 @@ export default {
               if (!res) {
                 throw new Error("This email is already in used.");
               }
+              res.user.updateProfile({displayName:displayName.value});
               console.log(res.user)
             } catch (err) {
               error.value = err.message;

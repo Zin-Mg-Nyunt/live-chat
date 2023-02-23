@@ -55,5 +55,6 @@ export default {
         padding: 10px 20px;
         margin: 20px auto;
         font-size: 1.2rem;
+        cursor: pointer;
     }
 </style>
