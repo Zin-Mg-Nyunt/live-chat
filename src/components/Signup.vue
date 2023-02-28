@@ -4,6 +4,9 @@
     <input type="text" placeholder="display name" v-model="displayName">
     <input type="email" placeholder="email" v-model="email">
     <input type="password" placeholder="password" v-model="password">
+    <div v-if="error" class="error">
+      {{error}}
+    </div>
     <button>Sign up</button>
   </form>
 </template>
@@ -21,9 +24,11 @@ export default {
         let {error,createAccount}=useSignup()
         let signup = async()=>{
             let res = await createAccount(email.value,password.value,displayName.value);
-            console.log(res.user)
+            if(res){
+              console.log(res.user)
+            }
         }
-        return {displayName, email, password,signup}
+        return {displayName, email, password, signup, error}
     }
 }
 </script>
