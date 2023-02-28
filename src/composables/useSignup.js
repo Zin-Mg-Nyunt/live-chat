@@ -10,9 +10,9 @@ let createAccount = async(email,password,displayName) =>{
         }
         res.user.updateProfile({displayName});
         return res;
-      } catch (err) {
+    } catch (err) {
         error.value = err.message;
-      }
+    }
 }
 let useSignup = () =>{
     return {error,createAccount}
