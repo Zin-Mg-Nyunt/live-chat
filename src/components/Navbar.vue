@@ -32,7 +32,7 @@ export default {
         justify-content: space-between;
         align-items: center;
         padding: 20px;
-        /* border-bottom: 1px solid #eee; */
+        border-bottom: 1px solid #eee;
     }
     nav p{
         font-size: 16px;
