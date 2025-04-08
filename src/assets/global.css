@@ -1,0 +1,10 @@
+body{
+    background-color: whitesmoke;
+}
+.container{
+    max-width: 60%;
+    background-color: white;
+    margin: 100px auto;
+    padding: 50px 100px;
+    border-radius: 40px;
+}
