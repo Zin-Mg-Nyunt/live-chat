@@ -1,5 +1,7 @@
 import firebase from "firebase/app";
 import "firebase/firestore";
+import "firebase/auth";
+
 const firebaseConfig = {
     apiKey: "AIzaSyCr4lucxNjWC_8N02xCuMstiIkFZKAqObQ",
     authDomain: "live-chat-7bc8e.firebaseapp.com",
