@@ -15,6 +15,7 @@
 import { ref } from 'vue';
 import createUser from "../composable/createUser";
 export default {
+    emits: ['enterChatroom'], //emit declare because if didn't declare, vue show warning in parent
     setup(props,context){
         let displayName = ref("");
         let email = ref("");
@@ -26,7 +27,6 @@ export default {
             let res = await createAccount(email.value,password.value,displayName.value)
             if(res){
                 context.emit("enterChatroom")
-                // if signup success, work this code
             }
         }
 

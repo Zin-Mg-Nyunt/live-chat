@@ -14,6 +14,7 @@
 import { ref } from 'vue';
 import loginUser from "../composable/loginUser";
 export default {
+    emits: ['enterChatroom'], //emit declare because if didn't declare, vue show warning in parent
     setup(props,context){
         let email = ref("");
         let password = ref("");

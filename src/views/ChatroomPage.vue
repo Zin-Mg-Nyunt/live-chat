@@ -1,23 +1,15 @@
 <template>
-  <nav class="navBar container">
-    <div>
-      <p>Welcome user name</p>
-      <p>Login as email</p>
-    </div>
-    <button>Logout</button>
-  </nav>
+  <NavBar></NavBar>
 </template>
 
 <script>
+import NavBar from '../components/NavBar'
 export default {
-
+  components: { NavBar },
+  
 }
 </script>
 
 <style>
-  nav{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+
 </style>
