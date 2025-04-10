@@ -9,18 +9,15 @@
 </template>
 
 <script>
-import { auth } from '@/firebase/config'
-import { ref } from 'vue'
+
 import logoutUser from "../composable/logoutUser";
 import { useRouter } from 'vue-router';
+import getUser from '../composable/getUser';
 export default {
     setup(){
         let router = useRouter();
-        let user=ref(auth.currentUser);
-        // onAuthStateChanged is always run when auth change anything like (singUp,login,logout)
-        auth.onAuthStateChanged((_user)=>{
-            user.value=_user
-        })
+        
+        let user = getUser();
 
         let logOut = async()=>{
             await logoutUser();

@@ -9,7 +9,7 @@ let createAccount = async (email,password,displayName)=>{
         if(!res){
             throw new Error("Couldn't create new user")
         }
-        res.user.updateProfile({ displayName })
+        await res.user.updateProfile({ displayName }) // wait to complete update user if don't wait, it will show displayName null in chatroom
         return res;
     } catch (err) {
         error.value = err.message

@@ -1,12 +1,12 @@
 <template>
   <div class="welcome container">
     <div v-if="toggle">
-      <SignUp @enterChatroom="enterChatroom"></SignUp>
-      <p>Already have an account? <span @click="toggle=!toggle">Login Account?</span></p>
-    </div>
-    <div v-if="!toggle">
       <Login @enterChatroom="enterChatroom"></Login>
       <p>Not a member? <span @click="toggle=!toggle">Signup Account?</span></p>
+    </div>
+    <div v-if="!toggle">
+      <SignUp @enterChatroom="enterChatroom"></SignUp>
+      <p>Already have an account? <span @click="toggle=!toggle">Login Account?</span></p>
     </div>
   </div>
 </template>
