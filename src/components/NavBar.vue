@@ -1,5 +1,5 @@
 <template>
-  <nav class="navBar container" v-if="user">
+  <nav class="navBar" v-if="user">
     <div>
       <p>Welcome {{user.displayName}}</p>
       <p>Login as {{user.email}}</p>
