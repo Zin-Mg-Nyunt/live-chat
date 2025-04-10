@@ -12,24 +12,31 @@
 import { ref } from 'vue'
 import getUser from '@/composable/getUser';
 import { timestamp } from '@/firebase/config';
+import useCollection from "../composable/useCollection";
 export default {
     setup(){
         let message = ref("");
         let user = getUser();
-        let messageSend = ()=>{
+        let {error,addDoc}=useCollection("messages"); // composable function
+
+        let messageSend = async ()=>{
             let chat={
                 message:message.value,
                 name:user.value.displayName,
                 created_at:timestamp()
             }
+            await addDoc(chat) // add data
+            message.value = "";
         }
-        return {message,messageSend}
+
+        return {message,messageSend,error}
     }
 }
 </script>
 
 <style>
     textarea{
+        position: relative;
         box-sizing: border-box;
         width: 100%;
         height: 70px;

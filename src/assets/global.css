@@ -5,8 +5,8 @@ body{
     max-width: 60%;
     background-color: white;
     margin: 100px auto;
-    padding: 20px 10px;
-    border-radius: 40px;
+    /* padding: 20px 10px; */
+    border-radius: 20px;
 }
 .welcome form{
     max-width: 500px;
