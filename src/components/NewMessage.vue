@@ -39,17 +39,18 @@ export default {
         position: relative;
         box-sizing: border-box;
         width: 100%;
-        height: 70px;
+        height: 50px;
         padding: 10px;
         color: rgb(135, 135, 135);
         font-size: 15px;
         outline: none;
-        border-color: lightgray;
+        border: none;
+        border-radius: 20px;
+        margin-top: 10px;
     }
     textarea::placeholder{
         color: rgb(186, 186, 186);
         position: relative;
-        font-weight: bold;
         bottom: 0;
     }
 </style>

@@ -31,5 +31,12 @@ export default {
     justify-content: space-between;
     align-items: center;
     padding: 0 15px;
+    border-bottom: 1px solid rgba(211, 211, 211, 0.292);
+  }
+  nav p:first-child{
+    margin-bottom: 0;
+  }
+  nav p:last-child{
+    margin-top: 0;
   }
 </style>

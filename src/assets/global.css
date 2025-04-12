@@ -1,12 +1,16 @@
 body{
-    background-color: whitesmoke;
+    background-color: rgb(231, 231, 231);
 }
 .container{
     max-width: 60%;
     background-color: white;
     margin: 100px auto;
-    /* padding: 20px 10px; */
     border-radius: 20px;
+    user-select: none;
+}
+.welcome .form-wrapper{
+    padding: 20px 0;
+    
 }
 .welcome form{
     max-width: 500px;
