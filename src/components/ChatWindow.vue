@@ -1,6 +1,6 @@
 <template>
   <div class="chatWindow">
-    <div class="messages" v-if="messages">
+    <div class="messages" v-if="messages" ref="msgBox">
         <div class="single" v-for="message in formattedMessages" :key="message.id">
             <span class="time">{{message.created_at}}</span>
             <span class="name">{{message.name}}</span>
@@ -12,17 +12,25 @@
 
 <script>
 import { db } from '@/firebase/config'
-import { computed, ref } from 'vue'
+import { computed, onUpdated, ref } from 'vue'
 import { formatDistanceToNow, FormatDistanceToNow } from "date-fns";
 export default {
     setup(){
         let messages = ref([]);
+
+        // auto scrolling feature
+        let msgBox = ref(null);
+        onUpdated(()=>{
+            msgBox.value.scrollTop = msgBox.value.scrollHeight
+        })
+
         let formattedMessages = computed(()=>{ //format date depend on messages array
             return messages.value.map(msg=>{
                 let formattedTime = formatDistanceToNow(msg.created_at.toDate())
                 return {...msg,created_at:formattedTime}
             })
         })
+        
         // fetch messages with realtime database
         db.collection('messages').orderBy('created_at').onSnapshot((snap)=>{
             let result = [];
@@ -35,7 +43,7 @@ export default {
             })
             messages.value=result;
         })
-        return {messages,formattedMessages}
+        return {messages,formattedMessages,msgBox}
     }
 }
 </script>
@@ -51,6 +59,7 @@ export default {
         letter-spacing: .5px;
         max-height: 600px;
         overflow: auto;
+        scrollbar-width: none;
     }
     .single{
         margin: 15px 0;
